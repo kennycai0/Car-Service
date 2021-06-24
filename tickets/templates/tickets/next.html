@@ -1,0 +1,13 @@
+{% extends 'tickets/base.html' %}
+
+{% block page_title %}
+{{ block.super }} Next Ticket
+{% endblock %}
+
+{% block content %}
+{% if ticket_number > 0 %}
+    <div>Next ticket #{{ ticket_number }}</div>
+{% else %}
+    <div>Waiting for the next client</div>
+{% endif %}
+{% endblock %}

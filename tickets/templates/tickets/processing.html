@@ -1,0 +1,15 @@
+{% extends 'tickets/base.html' %}
+
+{% block page_title %}
+{{ block.super }} Processing Menu
+{% endblock %}
+
+{% block content %}
+    <div>Change oil queue: {{ oil_len }}</div>
+    <div>Inflate tires queue: {{ tires_len }}</div>
+    <div>Get diagnostic queue: {{ diagnostic_len }}</div>
+
+    <form method="post">{% csrf_token %}
+      <button type="submit">Process next</button>
+    </form>
+{% endblock %}
